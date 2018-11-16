@@ -3,6 +3,7 @@
 #define CCH_H
 #include<stdio.h>
 #include<stdlib.h>
+#define SCREEN_SPLITTER '='
 #define LINE_FEED '\n'
 
 int CCH_width;
@@ -29,6 +30,14 @@ exit(0);
 CCH_reset();
 }
 
+char CCH_getChar(int x,int y){
+if(x<0||y<0||x>=CCH_width||y>=CCH_height){
+perror("invalid position");
+exit(0);
+}
+return CCHScreen[x+y*CCH_width];
+}
+
 void CCH_setChar(int x,int y,char character){
 if(x<0||y<0||x>=CCH_width||y>=CCH_height){
 perror("invalid position");
@@ -38,11 +47,11 @@ CCHScreen[x+y*CCH_width]=character;
 return;
 }
 
-void CCH_update(){
+void CCH_draw(){
 //top border
 int i;
 for(i=0;i<CCH_width;i++){
-putchar('#');
+putchar(SCREEN_SPLITTER);
 }
 putchar(LINE_FEED);
 
@@ -57,7 +66,7 @@ putchar(LINE_FEED);
 
 //bottom border
 for(i=0;i<CCH_width;i++){
-putchar('#');
+putchar(SCREEN_SPLITTER);
 }
 putchar(LINE_FEED);
 }
