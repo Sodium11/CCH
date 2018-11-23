@@ -1,0 +1,33 @@
+for(i=0;i<in;i++)
+putchar('#');
+#include<stdio.h>
+
+int main(){
+int width,height;
+int in;
+while(1){//width
+printf("\n%s","if one line is filled with '#'  type-1 ");
+scanf("%d",&in);
+if(in==-1){
+width=in;
+break;
+}
+int i;
+for(i=0;i<in;i++)
+putchar('#');
+}
+while(1){//height
+printf("\n%s","if there is only one line which is filled with '#'  type-1 ");
+scanf("%d",&in);
+if(in==-1){
+height=in;
+break; 
+}
+int i;
+
+for(i=0;i<in;i++)
+printf("%s","#\n");
+}
+
+return 0;
+}

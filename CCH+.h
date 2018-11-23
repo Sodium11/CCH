@@ -50,6 +50,26 @@ for(i=0;i<width;i++)
 return;
 }
 
+int CCH_setNumber(int x,int y,int n){
+int pos=1;
+if(n<0)return -1;
+if(n<10){
+CCH_setChar(x,y,n+'0');
+return 1;
+}
+
+while(n>pos)pos*=10;
+pos/=10;
+int p=0;
+while(pos>0){
+int a=n%(pos*10)/pos;
+CCH_setChar(x+p,y,a+'0');
+p++;
+pos/=10;
+}
+return p;
+}
+
 void CCH_setString(int x,int y,int len,char *str){
 int i;
 for(i=0;i<len;i++)
@@ -57,6 +77,7 @@ for(i=0;i<len;i++)
 return;
 }
 
+/*
 enum color{
 RED,
 GREEN,
@@ -99,5 +120,5 @@ break;
 }
 
 }
-
+*/
 #endif

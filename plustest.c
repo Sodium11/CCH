@@ -16,6 +16,8 @@ CCH_line(20,12,23,9,'#');//mouth
 //string
 CCH_setString(0,0,9,"HelloCCH!");
 
+CCH_setNumber(20,0,123);
+
 //draw
 CCH_draw();
 CCH_end();
