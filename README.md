@@ -1,15 +1,15 @@
-# CCH
-Character Control Header (in CUI)
+# CGR
+Character Graphic Renderer(in CUI)
 
-CCH is a simple character controller in CUI.
+CGR is a simple character controller in CUI.
 
 instruction:
 <dl>
-<li>CCH_init(int width,int height);   //initialize screen (width x height)</li>
-<li>CCH_setChar(int x,int y,char character);   //put "character" at (x,y)</li>
-<li>CCH_reset();   //fill screen with blank character</li>
-<li>CCH_draw();   //draw characters</li>
-<li>CCH_getWidth();   //return the width of screen (int)</li>
-<li>CCH_getHeight();   //return the height of screen (int)</li>
-<li>CCH_end();   //clear settings</li>
+<li>CGR_init(int width,int height);   //initialize screen (width x height)</li>
+<li>CGR_setChar(int x,int y,char character);   //put "character" at (x,y)</li>
+<li>CGR_reset();   //fill screen with blank character</li>
+<li>CGR_draw();   //draw characters</li>
+<li>CGR_getWidth();   //return the width of screen (int)</li>
+<li>CGR_getHeight();   //return the height of screen (int)</li>
+<li>CGR_end();   //clear settings</li>
 </dl>
