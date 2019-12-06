@@ -6,6 +6,7 @@ CGR is a simple character controller in CUI.
 instruction:
 <dl>
 <li>CGR_init(int width,int height);   //initialize screen (width x height)</li>
+<li>CGR_getChar(int x,int y); //get character at (x,y)</li>
 <li>CGR_setChar(int x,int y,char character);   //put "character" at (x,y)</li>
 <li>CGR_reset();   //fill screen with blank character</li>
 <li>CGR_draw();   //draw characters</li>
