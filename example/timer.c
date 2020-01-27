@@ -1,15 +1,14 @@
 #include<unistd.h>
-#include"CCH.h"
+#include"CGR.h"
 int main(){
-CCH_init(10,10);
-int x=0;
-while(x<10){
-CCH_reset();
-CCH_setChar(x,0,'a');
-CCH_draw();
-usleep(1000000);
-x++;
+CGR_init(10,10);
+while(1)
+for(int x=0;x<10;x++){
+CGR_reset();
+CGR_setChar(x,0,'a');
+CGR_draw();
+usleep(500000);
 }
-CCH_end();
+CGR_end();
 return 0;
 }

@@ -1,4 +1,4 @@
-//Character Control Header  by Sodium11.for.gitserver@gmail.com
+//Character Graphic Renderer  by Sodium11.for.gitserver@gmail.com
 #ifndef CGR_H
 #define CGR_H
 #include<stdio.h>
@@ -11,12 +11,12 @@ int CGR_height;
 char *CGRScreen;
 
 void CGR_reset(){
-int x,y;
-for(y=0;y<CGR_height;y++){
-        for(x=0;x<CGR_width;x++){
-        CGRScreen[x+y*CGR_width]=' ';
-        }
-}
+	int x,y;
+	for(y=0;y<CGR_height;y++){
+	        for(x=0;x<CGR_width;x++){
+	        CGRScreen[x+y*CGR_width]=' ';
+	        }
+	}
 }
 
 void CGR_init(int width,int height){
@@ -32,56 +32,55 @@ CGR_reset();
 
 char CGR_getChar(int x,int y){
 if(x<0||y<0||x>=CGR_width||y>=CGR_height){
-perror("invalid position");
-return -1;
-}
-return CGRScreen[x+y*CGR_width];
+		perror("invalid position");
+		return -1;
+	}
+	return CGRScreen[x+y*CGR_width];
 }
 
 int CGR_setChar(int x,int y,char character){
-if(x<0||y<0||x>=CGR_width||y>=CGR_height){
-perror("invalid position");
-return -1;
-}
-CGRScreen[x+y*CGR_width]=character;
-return 0;
+	if(x<0||y<0||x>=CGR_width||y>=CGR_height){
+		perror("invalid position");
+		return -1;
+	}
+	CGRScreen[x+y*CGR_width]=character;
+	return 0;
 }
 
 void CGR_draw(){
 //top border
-int i;
-for(i=0;i<CGR_width;i++){
-putchar(SCREEN_SPLITTER);
-}
-putchar(LINE_FEED);
-
-//draw
-int x,y;
-for(y=0;y<CGR_height;y++){
-	for(x=0;x<CGR_width;x++){
-	putchar(CGRScreen[x+y*CGR_width]);
+	int i;
+	for(i=0;i<CGR_width;i++){
+		putchar(SCREEN_SPLITTER);
 	}
-putchar(LINE_FEED);
-}
+	putchar(LINE_FEED);
+
+	//draw
+	int x,y;
+	for(y=0;y<CGR_height;y++){
+		for(x=0;x<CGR_width;x++){
+			putchar(CGRScreen[x+y*CGR_width]);
+		}
+		putchar(LINE_FEED);
+	}
 
 //bottom border
-for(i=0;i<CGR_width;i++){
-putchar(SCREEN_SPLITTER);
-}
-putchar(LINE_FEED);
+	for(i=0;i<CGR_width;i++){
+		putchar(SCREEN_SPLITTER);
+	}
+	putchar(LINE_FEED);
 }
 
 void CGR_end(){
-free(CGRScreen);
-return;
+	free(CGRScreen);
+	return;
 }
 
 int CGR_getWidth(){
-return CGR_width;
+	return CGR_width;
 }
 
 int CGR_getHeight(){
-return CGR_height;
+	return CGR_height;
 }
 #endif
-

@@ -1,4 +1,4 @@
-//Character Control Header  by Sodium11.for.gitserver@gmail.com
+//Character Graphic Renderer  by Sodium11.for.gitserver@gmail.com
 #ifndef CGR_H
 #define CGR_H
 #include<stdio.h>

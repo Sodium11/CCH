@@ -3,7 +3,7 @@ Character Graphic Renderer(in CUI)
 
 CGR is a simple character controller in CUI.
 
-instruction:
+instructions:
 <dl>
 <li>CGR_init(int width,int height);   //initialize screen (width x height)</li>
 <li>CGR_getChar(int x,int y); //get character at (x,y)</li>
