@@ -50,24 +50,27 @@ for(i=0;i<width;i++)
 return;
 }
 
-int CGR_setNumber(int x,int y,int n){
-int pos=1;
-if(n<0)return -1;
-if(n<10){
-CGR_setChar(x,y,n+'0');
-return 1;
+int power_num(int x,int a){//return x^a
+int result=1;
+for(int i=0;i<a;i++)
+	result*=x;
+return result;
 }
 
-while(n>pos)pos*=10;
-pos/=10;
-int p=0;
-while(pos>0){
-int a=n%(pos*10)/pos;
-CGR_setChar(x+p,y,a+'0');
-p++;
-pos/=10;
+int CGR_setNumber(int x,int y,int n){
+if(n<0){
+CGR_setChar(x,y,'-');
+return CGR_setNumber(x+1,y,-n);
 }
-return p;
+
+int num_len=1;
+while(power_num(10,num_len)<=n)num_len++;
+
+for(int i=0;i<num_len;i++){
+int figure=n/power_num(10,num_len-i-1)%10;
+CGR_setChar(x+i,y,figure+'0');
+}
+
 }
 
 void CGR_setString(int x,int y,int len,char *str){
